@@ -83,5 +83,44 @@
         </section>
       </footer>
     </div>
+    <script>
+      // let tela = 1;
+      // let tela = "tela";
+      // if("2"=="2"){
+      //   let tela2 = 'escopo'
+      // }
+
+      // console.log(tela2);
+        const input__categoria = document.querySelector('.class__categoria');
+        // const input__categoria2 = document.querySelectorAll('.class__categoria');
+        const btn__cadastrar = document.querySelector('#btn__cadastrar');
+
+        // let valor = input__categoria.value;
+
+        // console.log(valor);
+        btn__cadastrar.addEventListener('click',function(event){
+          event.preventDefault();
+
+          let objetoJSON = {
+            nome: input__categoria.value
+          };
+
+          console.log(objetoJSON);
+
+          let xhr = new XMLHttpRequest();
+
+          xhr.onload = function(){
+            if(xhr.readyState == 4 && xhr.status == 200){
+              console.log('sucesso');
+            }else{
+              console.log('erro');
+            }
+          }
+
+          xhr.open('POST','http://192.168.7.85:5000/api/categorias',true);
+          xhr.setRequestHeader('Content-Type','application/json; charset=utf-8');
+          xhr.send(JSON.stringify(objetoJSON));
+        });
+    </script>
   </body>
 </html>
