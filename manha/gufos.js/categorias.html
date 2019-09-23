@@ -1,126 +1,145 @@
 ﻿<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Gufos - Eventos públicos e privados</title>
-    <!-- Estilos -->
-    <link rel="stylesheet" href="./assets/css/flexbox.css" />
-    <link rel="stylesheet" href="./assets/css/reset.css" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
 
-    <!-- Fontes -->
-    <link
-      href="https://fonts.googleapis.com/css?family=Raleway"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
-      integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
-      crossorigin="anonymous"
-    />
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gufos - Eventos públicos e privados</title>
+  <!-- Estilos -->
+  <link rel="stylesheet" href="./assets/css/flexbox.css" />
+  <link rel="stylesheet" href="./assets/css/reset.css" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
 
-  <body>
-    <div>
-      <header class="cabecalhoPrincipal">
-        <div class="container">
-          <img src="./assets/img/icon-login.png" />
+  <!-- Fontes -->
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+    integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous" />
+</head>
 
-          <nav class="cabecalhoPrincipal-nav">
-            Administrador
-          </nav>
+<body>
+  <div>
+    <header class="cabecalhoPrincipal">
+      <div class="container">
+        <img src="./assets/img/icon-login.png" />
+
+        <nav class="cabecalhoPrincipal-nav">
+          Administrador
+        </nav>
+      </div>
+    </header>
+
+    <main class="conteudoPrincipal">
+      <section class="conteudoPrincipal-cadastro">
+        <h1 class="conteudoPrincipal-cadastro-titulo">Categorias</h1>
+        <div class="container" id="conteudoPrincipal-lista">
+          <table id="tabela-lista">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Título</th>
+                <!-- <th>Ação</th> -->
+              </tr>
+            </thead>
+
+            <tbody id="tabela-lista-corpo"></tbody>
+          </table>
         </div>
-      </header>
 
-      <main class="conteudoPrincipal">
-        <section class="conteudoPrincipal-cadastro">
-          <h1 class="conteudoPrincipal-cadastro-titulo">Categorias</h1>
-          <div class="container" id="conteudoPrincipal-lista">
-            <table id="tabela-lista">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>Título</th>
-                  <!-- <th>Ação</th> -->
-                </tr>
-              </thead>
+        <div class="container" id="conteudoPrincipal-cadastro">
+          <h2 class="conteudoPrincipal-cadastro-titulo">
+            Cadastrar Categoria
+          </h2>
+          <form>
+            <div class="container">
+              <input type="text" class="class__categoria" id="input__categoria" placeholder="tipo do evento" />
 
-              <tbody id="tabela-lista-corpo"></tbody>
-            </table>
-          </div>
+              <button id="btn__cadastrar" class="conteudoPrincipal-btn conteudoPrincipal-btn-cadastro">
+                Cadastrar
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
 
-          <div class="container" id="conteudoPrincipal-cadastro">
-            <h2 class="conteudoPrincipal-cadastro-titulo">
-              Cadastrar Categoria
-            </h2>
-            <form>
-              <div class="container">
-                <input
-                  type="text"
-                  class="class__categoria"
-                  id="input__categoria"
-                  placeholder="tipo do evento"
-                />
-                
-                <button
-                  id="btn__cadastrar"
-                  class="conteudoPrincipal-btn conteudoPrincipal-btn-cadastro"
-                >
-                  Cadastrar
-                </button>
-              </div>
-            </form>
-          </div>
-        </section>
-      </main>
+    <footer class="rodapePrincipal">
+      <section class="rodapePrincipal-patrocinadores">
+        <div class="container">
+          <p>Escola SENAI de Informática - 2019</p>
+        </div>
+      </section>
+    </footer>
+  </div>
+  <script>
 
-      <footer class="rodapePrincipal">
-        <section class="rodapePrincipal-patrocinadores">
-          <div class="container">
-            <p>Escola SENAI de Informática - 2019</p>
-          </div>
-        </section>
-      </footer>
-    </div>
-    <script>
-      // var documento = document;
-      // let btnCadastrar = document.getElementsByClassName("class__categoria");
-      // btnCadastrar = 1;
-      // if('2' == '2'){
-      //   let numero = 2;
-      // }
-      const inputCategoria = document.querySelector(".class__categoria");
-      // const inputCategoria = document.querySelector("#class__categoria");      
-      const btnCadastrar = document.querySelector('#btn__cadastrar');
+    const inputCategoria = document.querySelector(".class__categoria");
+    const btnCadastrar = document.querySelector('#btn__cadastrar');
+    const tabela = document.querySelector('#tabela-lista-corpo');
 
-      function cadastrarCategoria(){
-        event.preventDefault();
-        console.log(inputCategoria, btnCadastrar);
+    //função anonima com arrow
+    window.onload = () => {
+      let xhr = new XMLHttpRequest();
+
+      //onload
+      xhr.onload = sucesso;
+
+      function sucesso() {
+        var data = JSON.parse(this.responseText);
+        preencherTabela(data);
+        console.log(data);
       }
-        btnCadastrar.addEventListener('click' , function(){
-          event.preventDefault();
-          // console.log(inputCategoria.value);
-          let objetoJSON = {
-            nome : inputCategoria.value 
-          };
 
-          // console.log(objetoJSON);
-          let xhr = new XMLHttpRequest();
+      xhr.open('GET', 'http://192.168.7.85:5000/api/categorias');
+      xhr.send();
 
-          xhr.onload = function(){
-            if(xhr.readyState == 4 && xhr.status == "200"){
-              console.log("sucesso");
-            }else{
-              console.log("falha requisição");
-            }
-          }
 
-          xhr.open('POST','http://192.168.7.85:5000/api/categorias', true);
-          xhr.setRequestHeader('Content-Type','application/json;charset=utf-8');
-          xhr.send(JSON.stringify(objetoJSON));
+      function preencherTabela(categorias) {
+
+        categorias.forEach((element) => {
+
+          const tr = document.createElement('tr');
+          const td_id = document.createElement('td');
+          const td_nome = document.createElement('td');
+
+          td_id.textContent = element.idCategoria;
+          td_nome.textContent = element.nome;
+
+          tabela.appendChild(tr);
+          tr.appendChild(td_id);
+          tr.appendChild(td_nome);
+
         });
-    </script>
-  </body>
+      }
+    }
+
+
+
+    function cadastrarCategoria() {
+      event.preventDefault();
+      console.log(inputCategoria, btnCadastrar);
+    }
+    btnCadastrar.addEventListener('click', function () {
+      event.preventDefault();
+      let objetoJSON = {
+        nome: inputCategoria.value
+      };
+
+
+      let xhr = new XMLHttpRequest();
+
+      xhr.onload = function () {
+        if (xhr.readyState == 4 && xhr.status == "200") {
+          console.log("sucesso");
+        } else {
+          console.log("falha requisição");
+        }
+      }
+
+      xhr.open('POST', 'http://192.168.7.85:5000/api/categorias', true);
+      xhr.setRequestHeader('Content-Type', 'application/json;charset=utf-8');
+      xhr.send(JSON.stringify(objetoJSON));
+    });
+  </script>
+</body>
+
 </html>

@@ -23,7 +23,7 @@
                 </div>
             </div>
             <div class="col-2">
-                <input class="btn btn-primary" type="submit" value="Cadastrar" id="btnCadastrar" />
+                <input class="btn btn-primary" type="submit" value="Cadastrar" id="btnCadastrar" disabled/>
             </div>
         </div>
 
@@ -42,7 +42,43 @@
         </div>
     </div>
 
-   
+   <script>
+       const input = document.getElementById('nomeEstilo');
+       const submit = document.getElementById('btnCadastrar');
+
+       submit.addEventListener('click',function(){
+        
+        let objetoJSON = {
+            nome: input.value
+        };
+
+        let xhr = new XMLHttpRequest();
+
+        xhr.onload = function(){
+            if(xhr.readyState == 4 && xhr.status == 200){
+                console.log('Sucesso');
+            }else{
+                console.log('Errouuuu!');
+            }
+        }
+
+        xhr.open('POST','http://192.168.7.85:5000/api/estilos',true);
+        xhr.setRequestHeader('Content-Type','application/json; charset=utf-8');
+        xhr.send(JSON.stringify(objetoJSON));
+
+       });
+
+       input.addEventListener('input',function(){
+           if(input.value.length <= 4){
+            // console.log('menor do que 4');
+            submit.disabled = true;
+            alert('Valor da categoria menor do que 4, escreve mais ai');
+           }else{
+            // console.log('maior do que 4');
+            submit.disabled = false;
+           }
+       })
+   </script>
 </body>
 
 </html>

@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\_github\\senai-dev-2s2019\\sprint-2-backend\\Senai.Sstop.WebApi\\Senai.Sstop.WebApi\\Senai.Sstop.WebApi.csproj": {}
+    "C:\\Users\\gabriel.santos\\Documents\\Senai\\2-termo\\2s2019-t2-sprint-3-frontend\\exercicios\\ex_01\\sstop-base\\Senai.Sstop.WebApi\\Senai.Sstop.WebApi\\Senai.Sstop.WebApi.csproj": {}
   },
   "projects": {
-    "C:\\_github\\senai-dev-2s2019\\sprint-2-backend\\Senai.Sstop.WebApi\\Senai.Sstop.WebApi\\Senai.Sstop.WebApi.csproj": {
+    "C:\\Users\\gabriel.santos\\Documents\\Senai\\2-termo\\2s2019-t2-sprint-3-frontend\\exercicios\\ex_01\\sstop-base\\Senai.Sstop.WebApi\\Senai.Sstop.WebApi\\Senai.Sstop.WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\_github\\senai-dev-2s2019\\sprint-2-backend\\Senai.Sstop.WebApi\\Senai.Sstop.WebApi\\Senai.Sstop.WebApi.csproj",
+        "projectUniqueName": "C:\\Users\\gabriel.santos\\Documents\\Senai\\2-termo\\2s2019-t2-sprint-3-frontend\\exercicios\\ex_01\\sstop-base\\Senai.Sstop.WebApi\\Senai.Sstop.WebApi\\Senai.Sstop.WebApi.csproj",
         "projectName": "Senai.Sstop.WebApi",
-        "projectPath": "C:\\_github\\senai-dev-2s2019\\sprint-2-backend\\Senai.Sstop.WebApi\\Senai.Sstop.WebApi\\Senai.Sstop.WebApi.csproj",
-        "packagesPath": "C:\\Users\\admin.local\\.nuget\\packages\\",
-        "outputPath": "C:\\_github\\senai-dev-2s2019\\sprint-2-backend\\Senai.Sstop.WebApi\\Senai.Sstop.WebApi\\obj\\",
+        "projectPath": "C:\\Users\\gabriel.santos\\Documents\\Senai\\2-termo\\2s2019-t2-sprint-3-frontend\\exercicios\\ex_01\\sstop-base\\Senai.Sstop.WebApi\\Senai.Sstop.WebApi\\Senai.Sstop.WebApi.csproj",
+        "packagesPath": "C:\\Users\\gabriel.santos\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\gabriel.santos\\Documents\\Senai\\2-termo\\2s2019-t2-sprint-3-frontend\\exercicios\\ex_01\\sstop-base\\Senai.Sstop.WebApi\\Senai.Sstop.WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\admin.local\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\gabriel.santos\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -53,7 +53,6 @@
               "version": "[2.1.2, )"
             },
             "Microsoft.NETCore.App": {
-              "suppressParent": "All",
               "target": "Package",
               "version": "[2.1.0, )",
               "autoReferenced": true
