@@ -78,29 +78,31 @@
 
     //função anonima com arrow
     window.onload = () => {
-      let xhr = new XMLHttpRequest();
+      // let xhr = new XMLHttpRequest();
 
-      //onload
-      xhr.onload = sucesso;
+      // //onload
+      // xhr.onload = sucesso;
 
-      function sucesso() {
-        var data = JSON.parse(this.responseText);
-        preencherTabela(data);
-        console.log(data);
-      }
+      // function sucesso() {
+      //   var data = JSON.parse(this.responseText);
+      //   preencherTabela(data);
+      //   console.log(data);
+      // }
 
-      xhr.open('GET', 'http://192.168.7.85:5000/api/categorias');
-      xhr.send();
-
+      // xhr.open('GET', 'http://192.168.7.85:5000/api/categorias');
+      // // xhr.setRequestHeader('Content-Type','application/json; charset=utf-8');
+      // xhr.send();
+        const URL = 'http://192.168.7.85:5000/api/categorias';
+        fetch(URL).then(resposta=>resposta.json()).then(data=>preencherTabela(data)).catch(erro=>console.log(erro));
 
       function preencherTabela(categorias) {
-
+        // console.log(categorias);
         categorias.forEach((element) => {
 
           const tr = document.createElement('tr');
           const td_id = document.createElement('td');
           const td_nome = document.createElement('td');
-
+          
           td_id.textContent = element.idCategoria;
           td_nome.textContent = element.nome;
 
