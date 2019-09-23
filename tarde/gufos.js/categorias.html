@@ -84,20 +84,66 @@
       </footer>
     </div>
     <script>
-      // let tela = 1;
-      // let tela = "tela";
-      // if("2"=="2"){
-      //   let tela2 = 'escopo'
-      // }
-
-      // console.log(tela2);
         const input__categoria = document.querySelector('.class__categoria');
-        // const input__categoria2 = document.querySelectorAll('.class__categoria');
         const btn__cadastrar = document.querySelector('#btn__cadastrar');
+        const tabela = document.querySelector('#tabela-lista-corpo');
 
-        // let valor = input__categoria.value;
+        window.onload = function(){
+          // let categorias = [
+          //   // {idCategoria: 1, nome: "Categorias A"},
+          //   // {idCategoria: 2, nome: "Categorias B"},
+          //   // {idCategoria: 3, nome: "Categorias C"},
+          //   // {idCategoria: 4, nome: "Categorias D"},
+          //   // {idCategoria: 5, nome: "Categorias E"},
+          //   // {idCategoria: 6, nome: "Categorias F"},
+          //   // {idCategoria: 7, nome: "Categorias G"},
+          //   // {idCategoria: 8, nome: "Categorias H"},
+          //   // {idCategoria: 9, nome: "Categorias I"},
+          // ];
 
-        // console.log(valor);
+          // function success(){
+          //   let data = JSON.parse(this.responseText);
+          //   construirTabela(data);
+
+          //   console.log(data); 
+          // }
+
+          // function error(err){
+          //   console.log(err);
+          // }
+
+          // let xhr = new XMLHttpRequest();
+
+          // xhr.onload = success;
+          // xhr.onerror = error;
+          // xhr.open('GET','http://192.168.5.204:5000/api/categorias');
+          // xhr.send();
+          
+          let url = 'http://192.168.5.204:5000/api/categorias';
+
+          fetch(url)
+            .then( resposta => resposta.json())
+            .then( data => construirTabela(data))
+            .catch( erro => console.log(erro));  
+
+          function construirTabela (categorias){
+
+            categorias.forEach( element => {
+            
+              const tr = document.createElement('tr');
+              const td_id = document.createElement('td');
+              const td_nome = document.createElement('td');
+
+              td_id.textContent = element.idCategoria;
+              td_nome.textContent = element.nome;
+
+              tr.appendChild(td_id);
+              tr.appendChild(td_nome);
+              tabela.appendChild(tr);
+            });
+          }
+        };
+
         btn__cadastrar.addEventListener('click',function(event){
           event.preventDefault();
 
@@ -105,7 +151,7 @@
             nome: input__categoria.value
           };
 
-          console.log(objetoJSON);
+          // console.log(objetoJSON);
 
           let xhr = new XMLHttpRequest();
 
@@ -117,7 +163,7 @@
             }
           }
 
-          xhr.open('POST','http://192.168.7.85:5000/api/categorias',true);
+          xhr.open('POST','http://192.168.5.204:5000/api/categorias',true);
           xhr.setRequestHeader('Content-Type','application/json; charset=utf-8');
           xhr.send(JSON.stringify(objetoJSON));
         });

@@ -43,41 +43,44 @@
     </div>
 
    <script>
-       const input = document.getElementById('nomeEstilo');
-       const submit = document.getElementById('btnCadastrar');
+        const nomeEstilo = document.querySelector('#nomeEstilo');
+        const btnCadastrar = document.querySelector('#btnCadastrar');
 
-       submit.addEventListener('click',function(){
-        
-        let objetoJSON = {
-            nome: input.value
-        };
+        // console.log(nomeEstilo, btnCadastrar);
+        btnCadastrar.addEventListener('click',function(event){
+            let objetoJSON = {
+                nome: nomeEstilo.value
+            };
 
-        let xhr = new XMLHttpRequest();
+            // console.log(objetoJSON);
 
-        xhr.onload = function(){
-            if(xhr.readyState == 4 && xhr.status == 200){
-                console.log('Sucesso');
-            }else{
-                console.log('Errouuuu!');
+            let xhr = new XMLHttpRequest();
+
+            xhr.onload = function(){
+                if(xhr.readyState == 4 && xhr.status == 200){
+                    console.log('sucesso');
+                }else{
+                    console.log('erro');
+                } 
             }
-        }
 
-        xhr.open('POST','http://192.168.7.85:5000/api/estilos',true);
-        xhr.setRequestHeader('Content-Type','application/json; charset=utf-8');
-        xhr.send(JSON.stringify(objetoJSON));
+            xhr.open('POST','http://192.168.5.204:5000/api/estilos',true);
 
-       });
+            xhr.setRequestHeader('Content-Type','application/json; charset=utf-8');
 
-       input.addEventListener('input',function(){
-           if(input.value.length <= 4){
-            // console.log('menor do que 4');
-            submit.disabled = true;
-            alert('Valor da categoria menor do que 4, escreve mais ai');
-           }else{
-            // console.log('maior do que 4');
-            submit.disabled = false;
-           }
-       })
+            xhr.send(JSON.stringify(objetoJSON));
+        });
+
+        nomeEstilo.addEventListener('input',function(){
+            if(nomeEstilo.value.length <= 4){
+                alert('Seu estilo e menor do que 4 caracteres, digite mais');
+                
+                btnCadastrar.disabled = true;
+            }else{
+                // alert('Deu certo');
+                btnCadastrar.disabled = false;
+            }
+        })
    </script>
 </body>
 
