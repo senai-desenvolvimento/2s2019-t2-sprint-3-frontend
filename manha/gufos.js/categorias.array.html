@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Arrays</title>
+</head>
+<body>
+
+<script>
+    const div = document.createElement('div');
+    let arr = [
+                {numero: 1, nome: "testando"},
+                {numero: 2, nome: "testando de novo"}, 
+                {numero: 3, nome: "já disse que está testando"}
+            ];
+    // console.log(arr[4]);
+    // console.log(arr.length);
+
+    // arr.forEach((Element, index) => {
+    //     console.log(Element, index);
+    // });
+
+    // for(let i = 0; i< arr.length; i++){
+    //     console.log(arr[i]);
+    // }
+    // let i = 0;
+    
+    // while(i < arr.length){
+    //     console.log(arr[i]);
+    //     i++;
+    // }
+
+    // arr.push("Eventos D");
+    // console.log(arr);
+
+    // arr.pop();
+
+    // console.log(arr.join(" - "));
+    // console.log(arr.sort());
+    // console.log(arr.reverse());
+
+    // let arr_2 = arr.map(element =>{
+    //     return element + ' teste';
+    // });
+
+    // arr_2.map(element => {
+    //     console.log(element);
+    // });
+    
+    // arr.map(Element => {
+    //     console.log(Element.nome);
+    // });
+
+    // console.log(arr_2);
+
+    let numero = [10, 20, 30, 40, 50];
+
+    // let variavel = numero.map(element =>{
+    //     if(element >= 30){
+    //         return element;
+    //     }
+    // })
+
+    // let variavel = numero.filter(element =>{
+    //     return element >= 30;
+    // });
+
+    // variavel.filter(element =>{
+    //     console.log(element == 30);
+    // })
+
+
+    let numeros = [1, '1'];
+    
+    let soma = numeros.reduce((prevValue, Element) => {
+        // console.log(prevValue);
+        // console.log(Element, pre);
+        return prevValue - Element
+    });
+    console.log(soma);
+
+    console.log(2 == 2)
+    console.log(2 == '2')
+    console.log(2 === 2)
+    console.log(2 === '2')
+</script>
+</body>
+</html>
