@@ -29,32 +29,46 @@
     </table>
 
     <script>
-        const tabela = document.querySelector("#tabela-lista-corpo");
-        const URL = 'https://salty-atoll-57329.herokuapp.com/personagens';
+        const tabela = document.querySelector('#tabela-lista-corpo');
+
+        let URL = 'https://salty-atoll-57329.herokuapp.com/personagens';
+
         fetch(URL)
             .then(resposta => resposta.json())
-            .then(data => preencherTabela(data))
-            .catch(error => console.log(error));
+            .then(data => construirTabela(data))
+            .catch(erro => console.log(erro));
+        
+        function construirTabela(data){
+            
+            data.forEach(element =>{
 
-        function preencherTabela(herois) {
-            herois.forEach(element => {
-                let linha = document.createElement('tr');
+                console.log(element);
+
+                const tr = document.createElement('tr');
                 
-                let td_nome = document.createElement('td');
+                const td_id = document.createElement('td');
+                const td_nome = document.createElement('td');
+                const td_img = document.createElement('td');
+
+                // const img = document.createElement('img');
+
+                td_id.textContent = element.id;
                 td_nome.innerText = element.nome;
+                
 
-                let td_lancamento = document.createElement('td');
-                td_lancamento.textContent = element.lancamento;
+                // img.src = element.urlImagem;
 
-                let td_urlImagem = document.createElement('td');
-                td_urlImagem.innerHTML = "<img style='width: 60px;' src='" + element.urlImagem + "'>";
+                // img.setAttribute('style','width: 60px');
 
-                linha.appendChild(td_nome);
-                linha.appendChild(td_lancamento);
-                linha.appendChild(td_urlImagem);
+                // td_img.appendChild(img);
 
-                tabela.appendChild(linha);
+                td_img.innerHTML = "<img style='width:60px' src='"+element.urlImagem+"'>";
 
+                tr.appendChild(td_id);
+                tr.appendChild(td_nome);
+                tr.appendChild(td_img);
+
+                tabela.appendChild(tr);
             });
         }
     </script>
