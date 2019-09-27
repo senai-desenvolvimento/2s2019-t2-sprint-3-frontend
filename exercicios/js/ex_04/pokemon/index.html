@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="pokemon" type="text">
+    <button type="submit" id="buscar">Buscar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        // listar os dados do pokemon que o usuario digitar
+        const input = document.querySelector("#pokemon");
+        const button = document.querySelector("#buscar");
+        const resultado = document.querySelector("#resultado");
+
+        button.addEventListener('click', function (event) {
+            event.preventDefault();
+            console.log(input.value);
+
+            fetch('https://pokeapi.co/api/v2/pokemon/' + input.value)
+                .then(resposta => resposta.json())
+                .then(data => preencherResultado(data))
+                .catch(error => console.log(error));
+
+        });
+
+        function preencherResultado(valorDaApi) {
+            resultado.textContent = valorDaApi.base_experience;
+        }
+
+    </script>
+</body>
+
+</html>
