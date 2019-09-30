@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\_github\\senai-dev-2s2019\\sprint-3-frontend\\backend.projeto\\Senai.Gufos.WebApi\\Senai.Gufos.WebApi\\Senai.Gufos.WebApi.csproj": {}
+    "C:\\_github\\2s2019-t2-sprint-3-frontend\\backend.projeto\\Senai.Gufos.WebApi\\Senai.Gufos.WebApi\\Senai.Gufos.WebApi.csproj": {}
   },
   "projects": {
-    "C:\\_github\\senai-dev-2s2019\\sprint-3-frontend\\backend.projeto\\Senai.Gufos.WebApi\\Senai.Gufos.WebApi\\Senai.Gufos.WebApi.csproj": {
+    "C:\\_github\\2s2019-t2-sprint-3-frontend\\backend.projeto\\Senai.Gufos.WebApi\\Senai.Gufos.WebApi\\Senai.Gufos.WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\_github\\senai-dev-2s2019\\sprint-3-frontend\\backend.projeto\\Senai.Gufos.WebApi\\Senai.Gufos.WebApi\\Senai.Gufos.WebApi.csproj",
+        "projectUniqueName": "C:\\_github\\2s2019-t2-sprint-3-frontend\\backend.projeto\\Senai.Gufos.WebApi\\Senai.Gufos.WebApi\\Senai.Gufos.WebApi.csproj",
         "projectName": "Senai.Gufos.WebApi",
-        "projectPath": "C:\\_github\\senai-dev-2s2019\\sprint-3-frontend\\backend.projeto\\Senai.Gufos.WebApi\\Senai.Gufos.WebApi\\Senai.Gufos.WebApi.csproj",
-        "packagesPath": "C:\\Users\\helena.strada\\.nuget\\packages\\",
-        "outputPath": "C:\\_github\\senai-dev-2s2019\\sprint-3-frontend\\backend.projeto\\Senai.Gufos.WebApi\\Senai.Gufos.WebApi\\obj\\",
+        "projectPath": "C:\\_github\\2s2019-t2-sprint-3-frontend\\backend.projeto\\Senai.Gufos.WebApi\\Senai.Gufos.WebApi\\Senai.Gufos.WebApi.csproj",
+        "packagesPath": "C:\\Users\\gabriel.santos\\.nuget\\packages\\",
+        "outputPath": "C:\\_github\\2s2019-t2-sprint-3-frontend\\backend.projeto\\Senai.Gufos.WebApi\\Senai.Gufos.WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\helena.strada\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\gabriel.santos\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
