@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pokémon</title>
+</head>
+<style>
+	h1{
+		font-size: 64px;
+		margin-bottom: 10px;
+	}
+	h2{
+		font-size: 32px;
+		margin-bottom: 0px;
+	}
+	label{
+		font-size:  20px;
+	}
+    li{
+        font-size: 20px;
+    }
+	p{
+		font-size: 20px;	
+	}
+
+	#divCampo{
+		display: flex;
+	}
+    #divPokeInfo{
+		display: flex;
+    }
+	#input{
+		font-size: 22px;
+		width: 500px;
+		margin-bottom: 10px;
+        margin-right: 10px;
+	}
+    #imgPokemon{
+        width: 96px;
+        height: 96px;
+    }
+</style>
+<body>
+    <h1 id="titulo">Pokémon</h1>
+	<div id="divCampo">
+        <input type="text" id="input" placeholder="Digite o nome ou ID do Pokémon" value="1">
+		<label id="pBuscarPorHabilidade">Buscar por habilidade?</label>
+    	<input type="checkbox" id="checkbox">
+	</div>
+	<button id="btnBuscar">Buscar</button>
+	<div id="divResultado" hidden>
+        <h2 id="h2Info">Informações</h2>
+        <div id="divPokeInfo">
+            <div>
+                <p id="pNome"></p>
+                <p id="pAltura"></p>
+                <p id="pPeso"></p>
+            </div>
+            <img id="imgPokemon">
+        </div>
+
+        <h2 id="h2Habilidades">Habiliades</h2>
+        <ul id="listaHabilidades"></ul>
+	</div>
+</body>
+</html>
