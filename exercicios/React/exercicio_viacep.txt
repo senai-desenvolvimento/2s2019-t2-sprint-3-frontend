@@ -1,8 +1,14 @@
 Dada a API do viacep:
 https://viacep.com.br/
 
-Criar uma interface em React para que ao usu·rio digitar um cep de entrada, os campos de: logradouro, complemento, bairro, localidade e uf sejam preenchidos automaticamente pelo resultado que ser· obtido da API.
-Caso o usu·rio digite um valor inv·lido, mostre uma mensagem de erro.
+Criar uma interface em React para que ao usu√°rio digitar um cep de entrada, os campos de: logradouro, complemento, bairro, localidade e uf sejam preenchidos automaticamente pelo resultado que ser√° obtido da API.
+Caso o usu√°rio digite um valor inv√°lido, mostre uma mensagem de erro.
 
 Desafios Extras
-Validar o input do usu·rio que dever· ser somente do tipo inteiro.
+Validar o input do usu√°rio que dever√° ser somente do tipo inteiro.
+
+
+Inserir os dados recebidos na api de endere√ßos.
+	Execute o arquivo run.bat em enderecos\Senai.Enderecos.WebApi para subir a api.
+	Execute no SSMS o arquivo enderecos.sql para criar o banco de dados.
+	Endpoint: POST localhost:5000/api/endereco

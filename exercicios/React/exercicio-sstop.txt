@@ -1,0 +1,12 @@
+Execute o arquivo 'run.bat' dentro da pasta sstop/Senai.Sstop.WebApi/Senai.Sstop.WebApi/
+
+Crie uma interface em react que receba os seguintes endpoints
+
+Cadastrar
+POST localhost:5000/api/estilos
+
+Buscar estilos
+GET localhost:5000/api/estilos
+
+Buscar estilo por id
+GET localhost:5000/api/estilos/{id}
