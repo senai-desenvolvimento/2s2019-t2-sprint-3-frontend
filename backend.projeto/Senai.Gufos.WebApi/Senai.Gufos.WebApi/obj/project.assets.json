@@ -12283,7 +12283,7 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\gabriel.santos\\.nuget\\packages\\": {},
+    "C:\\Users\\admin.local\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -12292,14 +12292,14 @@
       "projectUniqueName": "C:\\_github\\2s2019-t2-sprint-3-frontend\\backend.projeto\\Senai.Gufos.WebApi\\Senai.Gufos.WebApi\\Senai.Gufos.WebApi.csproj",
       "projectName": "Senai.Gufos.WebApi",
       "projectPath": "C:\\_github\\2s2019-t2-sprint-3-frontend\\backend.projeto\\Senai.Gufos.WebApi\\Senai.Gufos.WebApi\\Senai.Gufos.WebApi.csproj",
-      "packagesPath": "C:\\Users\\gabriel.santos\\.nuget\\packages\\",
+      "packagesPath": "C:\\Users\\admin.local\\.nuget\\packages\\",
       "outputPath": "C:\\_github\\2s2019-t2-sprint-3-frontend\\backend.projeto\\Senai.Gufos.WebApi\\Senai.Gufos.WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\gabriel.santos\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\admin.local\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
