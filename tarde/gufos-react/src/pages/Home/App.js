@@ -21,9 +21,9 @@ function App() {
           <img src={logo} />
 
           <nav className="cabecalhoPrincipal-nav">
-            <a>Home</a>
-            <a>Eventos</a>
-            <a>Contato</a>
+            <Link to='/'>Home</Link>
+            <Link to='/eventos'>Eventos</Link>
+            <Link to='/contatos'>Contato</Link>
             <Link className="cabecalhoPrincipal-nav-login" to="/login">Login</Link>
           </nav>
         </div>
